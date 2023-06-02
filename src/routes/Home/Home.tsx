@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import * as Styled from './styles'
-import { EntityList } from './components/EntityList'
+import { EntityList } from '../../components/EntityList'
 import { ListItem } from '../../UI/ListItem'
 
 const Home: FC = () => {
