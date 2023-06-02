@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client'
 
-export const GET_WIEWER_REPOSITORIES = gql`
+export const GET_VIEWER_REPOSITORIES = gql`
   query GetViewerRepositories($first: Int!, $after: String) {
     viewer {
       repositories(
@@ -14,6 +14,14 @@ export const GET_WIEWER_REPOSITORIES = gql`
             stargazerCount
             updatedAt
             url
+            languages(first: 5, orderBy: { field: SIZE, direction: DESC }) {
+              edges {
+                node {
+                  name
+                  color
+                }
+              }
+            }
           }
         }
         pageInfo {

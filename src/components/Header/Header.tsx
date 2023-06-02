@@ -4,10 +4,10 @@ import { Logo } from './components/Logo'
 import { Search } from './components/Search'
 import { User } from './components/User'
 import { useQuery } from '@apollo/client'
-import { GET_WIEWER_REPOSITORIES } from '../../routes/Home/queries/GetWiewerRepos'
+import { GET_SERCHED_REPOSITORIES } from './queries/GetSerchedRepos'
 
 const Header: FC = () => {
-  const { data } = useQuery(GET_WIEWER_REPOSITORIES, {
+  const { data } = useQuery(GET_SERCHED_REPOSITORIES, {
     variables: {
       name: 'react',
       first: 10,
@@ -15,9 +15,9 @@ const Header: FC = () => {
     },
   })
 
-  console.log('====================================')
-  console.log('searched data >>', data)
-  console.log('====================================')
+  // console.log('====================================')
+  // console.log('searched data >>', data)
+  // console.log('====================================')
 
   return (
     <Styled.Root>
