@@ -24,28 +24,3 @@ export const GET_WIEWER_REPOSITORIES = gql`
     }
   }
 `
-
-export const GET_REPOSITORIES = gql`
-  query GetRepositories($name: String!, $first: Int!, $after: String) {
-    search(query: $name, type: REPOSITORY, first: $first, after: $after) {
-      repositoryCount
-      edges {
-        node {
-          ... on Repository {
-            name
-            stargazerCount
-            updatedAt
-            url
-            owner {
-              login
-            }
-          }
-        }
-      }
-      pageInfo {
-        endCursor
-        hasNextPage
-      }
-    }
-  }
-`
