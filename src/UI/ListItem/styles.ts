@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface ListItemStylesProps {
+  langAvatarColor: string
+}
+
 export const Root = styled.div`
   margin-top: 30px;
   border-radius: 15px;
@@ -64,10 +68,10 @@ export const Lang = styled.div`
   display: flex;
 `
 
-export const LangAvatar = styled.div`
+export const LangAvatar = styled.div<ListItemStylesProps>`
   width: 15px;
   height: 15px;
-  background-color: yellow;
+  background-color: ${(props) => props.langAvatarColor};
   border: none;
   border-radius: 100%;
   margin-right: 10px;

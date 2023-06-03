@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import * as Styled from './styles'
 import { Logo } from './components/Logo'
 import { Search } from './components/Search'
@@ -6,7 +6,8 @@ import { User } from './components/User'
 import { useGetSerchedRepositoriesQuery } from '../../generated/graphql'
 
 const Header: FC = () => {
-  const { data } = useGetSerchedRepositoriesQuery({
+  const [searchValue, setSearchValue] = useState('')
+  const { data, refetch } = useGetSerchedRepositoriesQuery({
     variables: {
       name: 'react',
       first: 10,
@@ -14,14 +15,18 @@ const Header: FC = () => {
     },
   })
 
-  console.log('====================================')
-  console.log('searched data >>', data)
-  console.log('====================================')
+  useEffect(() => {
+    refetch({ name: searchValue })
+  }, [refetch, searchValue])
+
+  // console.log('====================================')
+  // console.log('searchValue data >>', data)
+  // console.log('====================================')
 
   return (
     <Styled.Root>
       <Logo />
-      <Search />
+      <Search setSearchValue={setSearchValue} />
       <User />
     </Styled.Root>
   )
