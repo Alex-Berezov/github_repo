@@ -1,15 +1,8 @@
 overwrite: true
-schema:
-  - https://api.github.com/graphql:
-      headers:
-        Authorization: 'Bearer ${process.env.VITE_GITHUB_TOKEN}'
+schema: 'schema.docs.graphql'
 documents: 'src/**/*.gql'
 generates:
-  src/:
-    preset: near-operation-file
-    presetConfig:
-      baseTypesPath: 'generated/graphql.ts'
-      extension: '.generated.ts'
+  src/generated/graphql.ts: # изменено здесь
     plugins:
       - typescript
-      - typescript-operations
+      - typescript-react-apollo

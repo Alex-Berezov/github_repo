@@ -2,11 +2,10 @@ import { FC } from 'react'
 import * as Styled from './styles'
 import { EntityList } from '../../components/EntityList'
 import { ListItem } from '../../UI/ListItem'
-import { useQuery } from '@apollo/client'
-import { GET_VIEWER_REPOSITORIES } from './queries/GetViewerRepos.gql'
+import { useGetViewerRepositoriesQuery } from '../../generated/graphql'
 
 const Home: FC = () => {
-  const { data } = useQuery(GET_VIEWER_REPOSITORIES, {
+  const { data } = useGetViewerRepositoriesQuery({
     variables: {
       first: 10,
       after: null,
