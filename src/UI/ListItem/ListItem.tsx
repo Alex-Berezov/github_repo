@@ -5,8 +5,6 @@ import { Tag } from '../Tag'
 import { RepositoryEdge } from '../../generated/graphql'
 import { formatUpdatedAt } from '../../utils/formatUpdatedAt'
 
-const avatarURL = 'https://avatars.githubusercontent.com/u/53948974?s=40&v=4'
-
 interface ListItemProps {
   repoData: RepositoryEdge
 }
