@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "esLint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "tsLint": "tsc --noEmit",
     "preview": "vite preview",
     "codegen": "graphql-codegen --config codegen.yml",
     "test": "jest"

@@ -19,9 +19,9 @@ const Header: FC = () => {
     refetch({ name: searchValue })
   }, [refetch, searchValue])
 
-  // console.log('====================================')
-  // console.log('searchValue data >>', data)
-  // console.log('====================================')
+  console.log('====================================')
+  console.log('searchValue data >>', data)
+  console.log('====================================')
 
   return (
     <Styled.Root>

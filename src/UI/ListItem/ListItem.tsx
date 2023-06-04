@@ -2,7 +2,6 @@ import { FC } from 'react'
 import * as Styled from './styles'
 import { Tag } from '../Tag'
 
-import star from '../../assets/Images/star.svg'
 import { RepositoryEdge } from '../../generated/graphql'
 import { formatUpdatedAt } from '../../utils/formatUpdatedAt'
 
