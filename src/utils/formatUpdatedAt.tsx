@@ -1,5 +1,5 @@
 import { formatDistanceToNow, format } from 'date-fns'
-import { differenceInCalendarDays } from 'date-fns/esm'
+import differenceInCalendarDays from 'date-fns/differenceInCalendarDays'
 
 export const formatUpdatedAt = (updatedAt: string): string => {
   const date = new Date(updatedAt)
