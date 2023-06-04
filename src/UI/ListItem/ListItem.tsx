@@ -19,15 +19,12 @@ const ListItem: FC<ListItemProps> = ({ repoData }) => {
   return (
     <Styled.Root>
       <Styled.Header>
-        <Styled.Avatar>
-          <Styled.AvatarImg src={avatarURL} alt='Avatar Image' />
-        </Styled.Avatar>
         <Styled.Title>
           <Styled.TitleLink href='#'>{repo?.name}</Styled.TitleLink>
         </Styled.Title>
       </Styled.Header>
 
-      <Styled.Text>Node.js JavaScript runtime ✨🐢🚀✨</Styled.Text>
+      <Styled.Text>{repo?.description}</Styled.Text>
 
       <Styled.TagsList>
         {repo?.languages?.edges?.map((el) => {

@@ -17,21 +17,6 @@ export const Header = styled.div`
   height: fit-content;
 `
 
-export const Avatar = styled.div`
-  display: flex;
-  align-items: center;
-  height: fit-content;
-  margin-right: 10px;
-  border-radius: 4px;
-  padding: 3px;
-  border: 1px solid ${(props) => props.theme.colors.liteGrey};
-`
-
-export const AvatarImg = styled.img`
-  width: 20px;
-  height: 20px;
-`
-
 export const Title = styled.h3`
   ${(props) => props.theme.typography.H3}
 `

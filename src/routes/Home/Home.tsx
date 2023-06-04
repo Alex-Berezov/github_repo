@@ -10,7 +10,7 @@ import {
 const Home: FC = () => {
   const { data } = useGetViewerRepositoriesQuery({
     variables: {
-      first: 40,
+      first: 10,
       after: null,
     },
   })

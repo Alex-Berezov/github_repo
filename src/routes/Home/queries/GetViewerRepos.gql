@@ -8,6 +8,7 @@ query GetViewerRepositories($first: Int!, $after: String) {
       edges {
         node {
           name
+          description
           stargazerCount
           updatedAt
           url
