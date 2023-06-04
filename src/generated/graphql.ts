@@ -29243,6 +29243,10 @@ export const GetViewerRepositoriesDocument = gql`
           endCursor
           hasNextPage
         }
+        totalCount
+        edges {
+          cursor
+        }
       }
     }
   }

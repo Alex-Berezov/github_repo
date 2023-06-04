@@ -13,9 +13,9 @@ interface ListItemProps {
 
 const ListItem: FC<ListItemProps> = ({ repoData }) => {
   const repo = repoData?.node
-  console.log('====================================')
-  console.log('repo >>', repo)
-  console.log('====================================')
+  // console.log('====================================')
+  // console.log('repo >>', repo)
+  // console.log('====================================')
   return (
     <Styled.Root>
       <Styled.Header>

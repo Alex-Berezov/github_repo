@@ -26,6 +26,10 @@ query GetViewerRepositories($first: Int!, $after: String) {
         endCursor
         hasNextPage
       }
+      totalCount
+      edges {
+        cursor
+      }
     }
   }
 }
