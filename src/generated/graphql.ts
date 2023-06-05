@@ -29224,6 +29224,7 @@ export const GetViewerRepositoriesDocument = gql`
       ) {
         edges {
           node {
+            id
             name
             description
             stargazerCount

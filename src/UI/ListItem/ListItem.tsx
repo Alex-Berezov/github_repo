@@ -4,6 +4,7 @@ import { Tag } from '../Tag'
 
 import { RepositoryEdge } from '../../generated/graphql'
 import { formatUpdatedAt } from '../../utils/formatUpdatedAt'
+import { Link } from 'react-router-dom'
 
 interface ListItemProps {
   repoData: RepositoryEdge
@@ -11,14 +12,16 @@ interface ListItemProps {
 
 const ListItem: FC<ListItemProps> = ({ repoData }) => {
   const repo = repoData?.node
-  // console.log('====================================')
-  // console.log('repo >>', repo)
-  // console.log('====================================')
+  console.log('====================================')
+  console.log('repo >>', repo)
+  console.log('====================================')
   return (
     <Styled.Root>
       <Styled.Header>
         <Styled.Title>
-          <Styled.TitleLink href='#'>{repo?.name}</Styled.TitleLink>
+          <Styled.TitleLink to={`/repository/${repo?.id}`}>
+            {repo?.name}
+          </Styled.TitleLink>
         </Styled.Title>
       </Styled.Header>
 

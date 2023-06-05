@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 interface ListItemStylesProps {
   langAvatarColor: string
@@ -21,7 +22,7 @@ export const Title = styled.h3`
   ${(props) => props.theme.typography.H3}
 `
 
-export const TitleLink = styled.a`
+export const TitleLink = styled(Link)`
   color: ${(props) => props.theme.colors.linkBlue};
   text-decoration: none;
 `

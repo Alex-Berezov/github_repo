@@ -10,6 +10,7 @@ import {
   createHttpLink,
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
+import { BrowserRouter } from 'react-router-dom'
 
 const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql',
@@ -31,9 +32,11 @@ const client = new ApolloClient({
 })
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <ApolloProvider client={client}>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
-  </ApolloProvider>
+  <BrowserRouter>
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </ApolloProvider>
+  </BrowserRouter>
 )

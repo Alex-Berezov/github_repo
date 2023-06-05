@@ -1,8 +1,9 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const Root = styled.div``
 
-export const Link = styled.a`
+export const LogoLink = styled(Link)`
   cursor: pointer;
 
   svg {
