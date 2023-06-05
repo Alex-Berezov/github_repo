@@ -7,6 +7,7 @@ const colors = {
     titleGrey: 'rgb(173, 186, 199)',
     textGrey: 'rgb(118, 131, 144)',
     dotGrey: 'rgb(99, 110, 123)',
+    hoveredGrey: 'rgba(144, 157, 171, 0.12)',
     darkBlue: 'rgb(42, 46, 64)',
     linkBlue: 'rgb(83, 155, 245)',
     brightBlue: 'rgb(49, 109, 202)',

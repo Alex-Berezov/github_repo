@@ -1,4 +1,5 @@
 import { FC, MouseEventHandler } from 'react'
+import * as Styled from './styles'
 
 interface PaginationProps {
   currentPage: number
@@ -20,19 +21,19 @@ const Pagination: FC<PaginationProps> = ({
       (i >= currentPage - 3 && i <= currentPage + 3)
     ) {
       pages.push(
-        <button
+        <Styled.Button
           key={i}
           onClick={() => onPageChange(i)}
-          style={{ fontWeight: currentPage === i ? 'bold' : 'normal' }}
+          active={currentPage === i}
         >
           {i}
-        </button>
+        </Styled.Button>
       )
     } else if (
       (i === 2 && currentPage > 4) ||
       (i === totalPages - 1 && currentPage < totalPages - 3)
     ) {
-      pages.push(<span key={i}>...</span>)
+      pages.push(<Styled.Dots key={i}>...</Styled.Dots>)
       // Skip next iterations until we reach range around currentPage or last page
       i = i === 2 ? currentPage - 3 : totalPages - 1
     }
@@ -49,15 +50,21 @@ const Pagination: FC<PaginationProps> = ({
   }
 
   return (
-    <div>
-      <button onClick={handlePrevious} disabled={currentPage === 1}>
+    <Styled.Root>
+      <Styled.NextPrevButton
+        onClick={handlePrevious}
+        disabled={currentPage === 1}
+      >
         Previous
-      </button>
+      </Styled.NextPrevButton>
       {pages}
-      <button onClick={handleNext} disabled={currentPage === totalPages}>
+      <Styled.NextPrevButton
+        onClick={handleNext}
+        disabled={currentPage === totalPages}
+      >
         Next
-      </button>
-    </div>
+      </Styled.NextPrevButton>
+    </Styled.Root>
   )
 }
 
